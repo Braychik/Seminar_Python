@@ -7,6 +7,12 @@
 #     A = 2; B = 3 -> 8 
 
 def stepen(a, b):
-    result = a ** b
-    return result
-print(stepen(int(input()), int(input())))    
+    if b == 0:
+        return 1
+    if b % 2 == 0:
+        return stepen(a, b//2) * stepen(a, b//2)
+    else:
+        return stepen(a, b - 1) * a 
+
+
+print(stepen(3, 2))
